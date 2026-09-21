@@ -1,0 +1,21 @@
+[project]
+name = "dictate"
+version = "0.1.0"
+description = "Turn handwritten assignment PDFs into dictation audio, fully local and free."
+requires-python = ">=3.10"
+dependencies = [
+  "pymupdf>=1.24",
+  "pillow>=10.0",
+  "ollama>=0.4",
+  "edge-tts>=6.1",
+  "kokoro-onnx>=0.4",
+  "pydub>=0.25",
+  "soundfile>=0.12",
+]
+
+[project.scripts]
+dictate = "dictate.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
