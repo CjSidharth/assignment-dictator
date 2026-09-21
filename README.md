@@ -54,8 +54,8 @@ This installs the `dictate` command into your virtualenv.
 
 ## Which `--tier` to pick
 
-| RAM / hardware              | `--tier` | Model         |
-|------------------------------|----------|---------------|
+| RAM / hardware                | `--tier` | Model         |
+| ----------------------------- | -------- | ------------- |
 | Mac 16GB+ RAM, or a GPU PC    | `high`   | `qwen3-vl:8b` |
 | 8–16GB RAM, no GPU            | `mid`    | `qwen3-vl:4b` |
 | 8GB RAM, weak/old CPU-only PC | `low`    | `qwen3-vl:2b` |
@@ -64,7 +64,7 @@ This installs the `dictate` command into your virtualenv.
 `--model deepseek-ocr` for a faster alternative, or any other vision model you've pulled).
 
 **Real-world timing** (measured on an M5 MacBook Air, GPU-accelerated): `qwen3-vl:4b`
-took ~4 minutes *per page* (two model calls: transcribe, then structure). `qwen3-vl:8b`
+took ~4 minutes _per page_ (two model calls: transcribe, then structure). `qwen3-vl:8b`
 was noticeably slower still, and both make the machine run hot under sustained use. For
 one or two assignments that's fine left running in the background; for a large batch
 (dozens of assignments) local inference on a laptop is genuinely impractical — see the
@@ -95,10 +95,9 @@ Flags:
 
 Two ways out if local inference on your own laptop is too slow/hot for a big batch:
 
-**A friend's GPU rig.** Ollama can be reached over the network — no code changes needed:
+**A Remote GPU rig.** Ollama can be reached over the network — no code changes needed:
 
 ```bash
-# on the friend's machine (RTX 5060 / Core Ultra 9, say):
 OLLAMA_HOST=0.0.0.0:11434 ollama serve
 ollama pull qwen3-vl:8b
 
